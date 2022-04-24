@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap');
+*{
+  margin:0px;
+  padding:0px;
+  box-sizing: border-box;
+}
+
+/* OpeningBG CSS*/
+.bg{
+  width:100vw;
+  height:100vh;
+  background-image: url("../assets/MP-Sign.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center
+}
