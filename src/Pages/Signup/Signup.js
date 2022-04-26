@@ -1,5 +1,5 @@
 import React from 'react';
-import OpeningBG from '../OpeningBG';
+import OpeningBG from '../../Components/OpeningBG';
 import styles from './style.module.css';
 import { NavLink } from 'react-router-dom';
 import { Input, InputLabel, FormControl, Button, Checkbox, FormControlLabel,FormHelperText } from '@mui/material';
@@ -24,7 +24,7 @@ function Signup() {
             terms: false
         },
         onSubmit: values => {
-            SignUp(values.email,values.password,navigate);
+            SignUp(values.email,values.password,values.username,navigate);
             resetForm();
         },
         validationSchema:signupValidations,
