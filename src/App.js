@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Signup from './Components/Signup/Signup';
+import Signin from './Components/Signin/Signin';
 import Main from './Components/Main/Main';
 import {FirebaseApp} from './Firebase/firebase-config';
 import {getAuth,onAuthStateChanged} from 'firebase/auth';
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Main />} />
           <Route exact path="/signup" element={<Signup />} />
+          <Route exact path="/login" element={<Signin />} />
         </Routes>
     </BrowserRouter>
   )

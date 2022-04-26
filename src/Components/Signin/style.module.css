@@ -1,0 +1,56 @@
+.main{
+    width:30vw;
+    height:100vh;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+.inputArea>h1{
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+.inputArea{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+.inputs{
+    width:24vw;
+}
+.link{
+    font-size: 3rem;
+    text-decoration: none;
+    color:#0075A8;
+    font-weight: 900;
+}
+
+/* Signup Area Responsive */
+@media(max-width:1000px){
+    .main{
+        width:100vw;
+    }
+    .inputArea{
+        margin: 2rem 0px;
+        width:70vw;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding:2rem 0px;
+    }
+    .inputs{
+        width:40vw;
+    }
+}
+@media(max-width:600px){
+    .inputArea{
+        width:100vw;
+        margin:0px;
+        box-shadow:none;
+    }
+    .inputs{
+        width:70vw;
+    }
+}
