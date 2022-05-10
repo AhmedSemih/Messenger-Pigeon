@@ -72,6 +72,8 @@ export const acceptFriendRequest=(userId,userName,senderId,senderName)=>{
 
     set(ref(db, 'users/' + userId + '/requests/'+senderId), {
     });
+    set(ref(db, 'users/' + senderId + '/requests/'+userId), {
+    });
 
     let randomRef=push(ref(db,'users/'));
     var channelId=randomRef.key;
@@ -112,4 +114,10 @@ export const getFriends=(userId)=>{
         }
     });
     return friendsArray;
+}
+
+//Remove Friend
+export const removeFriend=(userId,removeId)=>{
+    const db = getDatabase();
+    set(ref(db,'users/'+userId+'/friends/'+removeId),{});
 }

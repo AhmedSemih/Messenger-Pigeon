@@ -36,7 +36,7 @@ function AddFriendbar({ name, request, uid, senderId, clickAnswer }) {
     }, []);
 
     const onClickUser = () => {
-        navigate('/profile');
+        navigate('/profile',{state:{id:uid||senderId,friend:isFriend}});
     }
 
     const onClickAdd = () => {
