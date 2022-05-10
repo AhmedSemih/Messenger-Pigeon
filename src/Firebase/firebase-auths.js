@@ -1,10 +1,10 @@
-import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { FirebaseApp } from './firebase-config.js';
 import Swal from 'sweetalert2';
 import { addUserData } from './firebase-database';
 
 
-
+//Create Account
 export const SignUp = (email, password, username, navigate) => {
 
   FirebaseApp();
@@ -34,6 +34,7 @@ export const SignUp = (email, password, username, navigate) => {
     });
 }
 
+//Login
 export const Login = (email, password, navigate) => {
 
   FirebaseApp();
@@ -52,3 +53,10 @@ export const Login = (email, password, navigate) => {
       });
     });
 }
+
+//Logout
+export const SignOut = () => {
+  const auth = getAuth();
+  
+  signOut(auth);
+ }
