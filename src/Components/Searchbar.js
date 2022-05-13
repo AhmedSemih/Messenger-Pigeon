@@ -32,7 +32,7 @@ function Searchbar({bgColor,color,isFriendSearch}) {
                     placeholder={isFriendSearch ? "Search a Friend..." : "Search a User..."}
                     onChange={onChange}
                 />
-                <IconButton sx={{ p: '10px',color:color }}>
+                <IconButton onClick={onSubmitSearch} sx={{ p: '10px',color:color }}>
                     <Search />
                 </IconButton>
             </Box>

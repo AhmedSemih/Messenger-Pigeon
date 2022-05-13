@@ -18,7 +18,6 @@ function FriendRequest() {
     },[answered]);
 
     const clickAnswer=(answer)=>{
-        setRequestArray([]);
         setAnswered(answer);
     }
     

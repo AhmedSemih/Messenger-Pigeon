@@ -34,10 +34,10 @@ function Menu() {
   }, [friends, user, friendSearch]);
 
   return (
-    <Box sx={{ width: '100%', backgroundColor: '#476072', minHeight: '100vh', borderRight: '2px solid #4a6c7d'}}>
+    <Box sx={{ width: '100%', backgroundColor: '#476072', maxHeight: '100vh', borderRight: '2px solid #4a6c7d'}}>
       <TopMenu />
       <Searchbar bgColor="#548CA8" color="#334257" isFriendSearch={true} />
-      <Box sx={{overflowY:'scroll'}}>
+      <Box sx={{overflowY:'auto',height:'80vh'}}>
         {
           friends.map((friend) => {
             return <Friendbar key={friend.id} id={friend.id} channelId={friend.channelId}></Friendbar>

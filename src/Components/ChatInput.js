@@ -31,7 +31,7 @@ function ChatInput({ channelId, userId,isSend}) {
                     value={message}
                     onChange={onChange}
                 />
-                <IconButton sx={{ p: '10px', color: '#334257' }}>
+                <IconButton onClick={onSubmit} sx={{ p: '10px', color: '#334257' }}>
                     <Send />
                 </IconButton>
             </Box>
