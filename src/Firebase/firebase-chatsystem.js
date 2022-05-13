@@ -1,4 +1,4 @@
-import { getDatabase, ref, set, onValue, push, serverTimestamp, limitToLast, limitToFirst, query, remove, child } from "firebase/database";
+import { getDatabase, ref, set, onValue, push, serverTimestamp, limitToLast,query, remove} from "firebase/database";
 
 //Create Channel
 export const createChannel = (channelId, user1, user2) => {
@@ -11,16 +11,16 @@ export const createChannel = (channelId, user1, user2) => {
 
     //Last Seen and Send
     set(ref(db, 'channels/' + channelId + '/' + user1 + '/lastseen/'), {
-        lastSeen: 0,
+        lastseen: 0,
     });
     set(ref(db, 'channels/' + channelId + '/' + user1 + '/lastsend/'), {
-        lastSend: 0,
+        lastsend: 0,
     });
     set(ref(db, 'channels/' + channelId + '/' + user2 + '/lastseen/'), {
-        lastSeen: 0,
+        lastseen: 0,
     });
     set(ref(db, 'channels/' + channelId + '/' + user2 + '/lastsend/'), {
-        lastSend: 0,
+        lastsend: 0,
     });
 }
 
@@ -30,7 +30,7 @@ export const sendMessage = (channelId, senderId, text) => {
 
     //Update Last Send
     set(ref(db, 'channels/' + channelId + '/' + senderId + '/lastsend/'), {
-        lastSend: serverTimestamp(),
+        lastsend: serverTimestamp(),
     });
 
     updateLastSeen(channelId, senderId);
@@ -106,6 +106,7 @@ export const getLastSend = (channelId, userId) => {
 
     onValue(lastSendRef, snapshot => {
         lastSend = snapshot.val();
+        
     });
     return lastSend;
 }
@@ -115,6 +116,6 @@ export const updateLastSeen = (channelId, userId) => {
     const db = getDatabase();
 
     set(ref(db, 'channels/' + channelId + '/' + userId + '/lastseen/'), {
-        lastSeen: serverTimestamp(),
+        lastseen: serverTimestamp(),
     });
 }

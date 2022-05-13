@@ -9,4 +9,4 @@ function OpeningBG({children}) {
   )
 }
 
-export default OpeningBG;
+export default React.memo(OpeningBG);

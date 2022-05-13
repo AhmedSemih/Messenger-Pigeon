@@ -18,8 +18,8 @@ function FriendRequest() {
     },[answered]);
 
     const clickAnswer=(answer)=>{
+        setRequestArray([]);
         setAnswered(answer);
-        console.log(answer);
     }
     
 
@@ -33,4 +33,4 @@ function FriendRequest() {
     )
 }
 
-export default FriendRequest
+export default React.memo(FriendRequest);

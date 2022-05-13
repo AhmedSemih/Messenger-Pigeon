@@ -99,7 +99,7 @@ function Profile() {
           </Grid>
           <Grid item xs={12} md={8} >
             <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', p: 3, ml: 3 }}>
-              <Typography sx={{ fontSize: '4vh', fontWeight: '700' }}>{username}</Typography>
+              <Typography sx={{ fontSize: '3vh', fontWeight: '700' }}>{username}</Typography>
               <Typography sx={{ mt: 3, fontSize: '2.7vh' }}>{info}</Typography>
             </Box>
             <Box sx={{ textAlign: 'center', mt: 1 }}>

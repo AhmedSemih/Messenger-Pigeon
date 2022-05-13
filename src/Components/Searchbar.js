@@ -19,7 +19,7 @@ function Searchbar({bgColor,color,isFriendSearch}) {
 
     useEffect(()=>{
         setUserSearch(" ");
-    },[])
+    },[]);
 
     return (
         <Box sx={{width:'100%',height:'10vh',display: 'flex', alignItems: 'center',justifyContent:'center',borderBottom:'2px solid #4a6c7d',px:2}}>
@@ -40,4 +40,4 @@ function Searchbar({bgColor,color,isFriendSearch}) {
     )
 }
 
-export default Searchbar;
+export default React.memo(Searchbar);

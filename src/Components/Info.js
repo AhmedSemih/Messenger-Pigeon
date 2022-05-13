@@ -14,4 +14,4 @@ function Info({children}) {
   )
 }
 
-export default Info;
+export default React.memo(Info);

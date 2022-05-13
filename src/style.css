@@ -10,8 +10,12 @@
 .bg{
   width:100vw;
   height:100vh;
-  background-image: url("../assets/MP-Sign.jpg");
+  background-image: url("../assets/Mp-Background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center
+}
+
+::-webkit-scrollbar {
+  width: 0px;
 }

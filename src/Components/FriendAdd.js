@@ -16,7 +16,7 @@ function FriendAdd() {
     useEffect(()=>{
         
         //Render by Search
-        if(userSearch!==""){
+        if(userSearch!==" " && userSearch!==null && userSearch!==undefined){
 
            let userList=[];
                 setUsersArray(userList);
@@ -43,6 +43,10 @@ function FriendAdd() {
                 });
             }
         }
+        else{
+            let userList=[];
+            setUsersArray(userList);
+        }
 
     },[userSearch]);
 
@@ -58,4 +62,4 @@ function FriendAdd() {
     )
 }
 
-export default FriendAdd;
+export default React.memo(FriendAdd);

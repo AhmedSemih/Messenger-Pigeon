@@ -1,15 +1,17 @@
-import { getDatabase, ref, set, onValue, push, } from "firebase/database";
+import { getDatabase, ref, set, onValue, push,update } from "firebase/database";
+import { createChannel } from "./firebase-chatsystem";
 
 //Add User Data
-export const addUserData = (userId, username, email, info) => {
+export const addUserData = (userId, username, email) => {
     const db = getDatabase();
 
     set(ref(db, 'users/' + userId), {
         userId: userId,
         username: username,
         email: email,
-        info: info ? info : 'No Information'
+        info:'No Information'
     });
+
 };
 
 //Get User Data
@@ -23,6 +25,16 @@ export const getUserData = (userId) => {
 
     return data;
 };
+
+//Update User
+export const updateUser=(userId,username,info)=>{
+    const db = getDatabase();
+
+    update(ref(db, 'users/' + userId), {
+        username: username,
+        info: info ? info : 'No Information'
+    });
+}
 
 //Get Users
 export const getUsers = () => {
@@ -77,6 +89,8 @@ export const acceptFriendRequest=(userId,userName,senderId,senderName)=>{
 
     let randomRef=push(ref(db,'users/'));
     var channelId=randomRef.key;
+
+    createChannel(channelId,userId,senderId);
 
     set(ref(db,'users/' + userId +'/friends/'+senderId),{
         id:senderId,

@@ -101,7 +101,7 @@ function Signup() {
                     disabled={!isValid} 
                     size='large' 
                     variant="contained" 
-                    sx={{ margin: '1rem 0' }} 
+                    sx={{ margin: '1rem 0',backgroundColor:'#548CA8' }} 
                     className={styles.inputs} >Sign up</Button>
 
                     <p>Already have an account ?</p>

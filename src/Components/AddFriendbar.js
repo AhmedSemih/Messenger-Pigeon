@@ -109,14 +109,10 @@ function AddFriendbar({ name, request, uid, senderId, clickAnswer }) {
 
     }
 
-    const onClickFriend=()=>{
-        navigate('/chat');
-    }
-
     return (
         <Box id="sender" sx={{ height: '10vh', width: '100%', borderBottom: '2px solid #4a6c7d', display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
             <Avatar onClick={(onClickUser)} {...stringAvatar(name)} />
-            <Typography onClick={isFriend ? onClickFriend : null} sx={{ color: 'white', fontSize: '3vh', p: 1, width: '85%' }}>{name}</Typography>
+            <Typography sx={{ color: 'white', fontSize: '3vh', p: 1, width: '85%' }}>{name}</Typography>
             {request ?
                 <Box sx={{ display: "flex", flexDirection: 'column', color: '#334257' }}>
                     <IconButton onClick={onClickAccept} size='small'><Done sx={{ fontSize: '4vh' }} /></IconButton>
@@ -127,4 +123,4 @@ function AddFriendbar({ name, request, uid, senderId, clickAnswer }) {
     )
 }
 
-export default AddFriendbar;
+export default React.memo(AddFriendbar);
